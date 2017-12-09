@@ -39,7 +39,7 @@ void configure_rtc(){
 
     //RTC_C_BCD_Type->TIM0 = seconds(6-4 high digit) (3-0 low digit)
     //RTC_C_BCD_Type->TIM0 = minutes(12-15 high digit) (8-11 low digit)
-    RTC_C_BCD->TIM0= 0x2300;   //minutes, seconds
+    RTC_C_BCD->TIM0= 0x3500;   //minutes, seconds
 
     //RTC_C_BCD_Type->TIM1 =  hours(4-5 high digit) (3-0 low digit)
     //RTC_C_BCD_Type->TIM1 = day of week(8-10)
