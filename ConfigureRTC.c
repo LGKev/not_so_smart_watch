@@ -19,8 +19,9 @@ extern  uint8_t  reset_seconds;
 extern uint8_t update_time;
 
 void configure_rtc(){
-
     RTC_C->CTL0 = RTC_C_KEY | RTC_C_CTL0_TEVIE | RTC_C_CTL0_RDYIE; //Real time clock key (for activation)
+
+    //RTC_C->CTL0 = RTC_C_KEY | RTC_C_CTL0_TEVIE | RTC_C_CTL0_RDYIE; //Real time clock key (for activation)
    // RTC_C->CTL0 |= RTC_C_CTL0_RDYIE; //Real time clock read ready interrupt enable
     //RTC_C->CTL0 &= ~(RTCRDYIFG) //associated flag
 
@@ -97,5 +98,8 @@ void RTC_C_IRQHandler(void)
         // Re-lock the RTC
         RTC_C->CTL0 = RTC_C->CTL0 & ~(RTC_C_CTL0_KEY_MASK);
     }
+//clear any flags
+    RTC_C->CTL0 = (RTC_C->CTL0 & ~(RTC_C_CTL0_KEY_MASK |  RTCRDYIFG | RTCOFIFG| RTCTEVIFG)) | RTC_C_KEY;
+    RTC_C->CTL0 = RTC_C->CTL0 & ~(RTC_C_CTL0_KEY_MASK);
 
 }
