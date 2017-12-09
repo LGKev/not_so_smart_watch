@@ -25,6 +25,8 @@ C_SRCS += \
 ../display.c \
 ../dma.c \
 ../flash.c \
+../fontcm18i.c \
+../fontcm24b.c \
 ../fontfixed6x8.c \
 ../fpu.c \
 ../gpio.c \
@@ -67,6 +69,8 @@ C_DEPS += \
 ./display.d \
 ./dma.d \
 ./flash.d \
+./fontcm18i.d \
+./fontcm24b.d \
 ./fontfixed6x8.d \
 ./fpu.d \
 ./gpio.d \
@@ -109,6 +113,8 @@ OBJS += \
 ./display.obj \
 ./dma.obj \
 ./flash.obj \
+./fontcm18i.obj \
+./fontcm24b.obj \
 ./fontfixed6x8.obj \
 ./fpu.obj \
 ./gpio.obj \
@@ -151,6 +157,8 @@ OBJS__QUOTED += \
 "display.obj" \
 "dma.obj" \
 "flash.obj" \
+"fontcm18i.obj" \
+"fontcm24b.obj" \
 "fontfixed6x8.obj" \
 "fpu.obj" \
 "gpio.obj" \
@@ -193,6 +201,8 @@ C_DEPS__QUOTED += \
 "display.d" \
 "dma.d" \
 "flash.d" \
+"fontcm18i.d" \
+"fontcm24b.d" \
 "fontfixed6x8.d" \
 "fpu.d" \
 "gpio.d" \
@@ -234,6 +244,8 @@ C_SRCS__QUOTED += \
 "../display.c" \
 "../dma.c" \
 "../flash.c" \
+"../fontcm18i.c" \
+"../fontcm24b.c" \
 "../fontfixed6x8.c" \
 "../fpu.c" \
 "../gpio.c" \

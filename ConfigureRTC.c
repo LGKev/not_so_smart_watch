@@ -39,15 +39,15 @@ void configure_rtc(){
 
     //RTC_C_BCD_Type->TIM0 = seconds(6-4 high digit) (3-0 low digit)
     //RTC_C_BCD_Type->TIM0 = minutes(12-15 high digit) (8-11 low digit)
-    RTC_C_BCD->TIM0= 0x0000;   //minutes, seconds
+    RTC_C_BCD->TIM0= 0x2300;   //minutes, seconds
 
     //RTC_C_BCD_Type->TIM1 =  hours(4-5 high digit) (3-0 low digit)
     //RTC_C_BCD_Type->TIM1 = day of week(8-10)
-    RTC_C_BCD->TIM1=0x0706;  //day of week, hour
+    RTC_C_BCD->TIM1=0x0704;  //day of week, hour
 
     //RTC_C_BCD_Type->DATE = days of month(4-5 high digit) (0-3 low digit)
     //RTC_C_BCD_Type->DATE = month(12 high) (8-11 low digit)
-    RTC_C_BCD->DATE=0x1126;  //month, day
+    RTC_C_BCD->DATE=0x1209;  //month, day
 
     //RTC_C_BCD_Type->YEAR = year(0-3 lowest dig)(7-4 decade)(11-8 century)(12-14 century)
     RTC_C_BCD->YEAR=0x2017;  //year

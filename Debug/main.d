@@ -15,6 +15,9 @@ main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/in
 main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdio.h
 main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdarg.h
 main.obj: ../ConfigureRTC.h
+main.obj: ../grlib.h
+main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdbool.h
+main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/assert.h
 main.obj: ../Lcd.h
 
 ../main.c: 
@@ -32,4 +35,7 @@ C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/link
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdio.h: 
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdarg.h: 
 ../ConfigureRTC.h: 
+../grlib.h: 
+C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdbool.h: 
+C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/assert.h: 
 ../Lcd.h: 

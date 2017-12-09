@@ -24,7 +24,8 @@ void LCD(void)
    Graphics_initContext(&g_sContext, &g_sCrystalfontz128x128);
    Graphics_setForegroundColor(&g_sContext, GRAPHICS_COLOR_AQUAMARINE);
    Graphics_setBackgroundColor(&g_sContext, GRAPHICS_COLOR_RED);
-   GrContextFontSet(&g_sContext, &g_sFontFixed6x8);
+   //GrContextFontSet(&g_sContext, &g_sFontFixed6x8);
+   GrContextFontSet(&g_sContext, &g_sFontCm18i);
    Graphics_clearDisplay(&g_sContext);
 }
 
@@ -35,3 +36,9 @@ void display_center(int8_t title [20], uint16_t x, uint16_t y){
 void display_horizontal_Line(uint8_t x_start, uint8_t x_end, uint8_t y, uint32_t value){
     Graphics_drawHorizontalLineOnDisplay(&g_sContext, x_start, x_end, y, value);
 }
+
+void set_font(Graphics_Font  font){
+    GrContextFontSet(&g_sContext, &font);
+}
+
+//void set_background_color();
