@@ -55,6 +55,8 @@ void main(void) {
     sprintf(test_string, "Vel: %2.3f \n", 53.49);
      display_center(test_string, 64, 60);
 
+
+#ifdef test1
    // display_horizontal_Line(40, 60, 89, 33);
     /*============================================*/
     /*======         RTC         *jordan Wright  ==========*/
@@ -69,12 +71,18 @@ void main(void) {
  /*============================================*/
 /* ==========         end of configurations             =========*/
 /*=============================================*/
-
+#endif
       sprintf(test_string, "Vel: %2.3f \n", 69.423);
        display_center(test_string, 64, 60);
       __enable_interrupt();
 
     while(1) {
+        bla++;
+
+        if(bla%2000 == 0){
+           sprintf(test_string, "bla: %d", bla );
+         display_center(test_string, 64, 60);
+        }
 
     }
 }
