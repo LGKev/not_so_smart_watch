@@ -8,6 +8,8 @@
 #include "grlib.h"
 #include "adc_driver.h"
 #include "watch_face_themes.h"
+#include "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.h"
+#include  "Crystalfontz128x128_ST7735.h"
 
 
 
@@ -122,9 +124,10 @@ ADC_CONFIG_Accelerometer();
       //this settting font doesn't work. i need to find out the correct way.
       //I need a helper funciton to acces the protectedd.
 
-      display_center("K^2", 64, 85);
-
-
+//turn display off
+      HAL_LCD_writeCommand(CM_DISPOFF);
+//turn backlight off
+      P2OUT = 0;
 
     while(1) {
 
