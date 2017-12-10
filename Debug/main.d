@@ -19,6 +19,8 @@ main.obj: ../grlib.h
 main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdbool.h
 main.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/assert.h
 main.obj: ../adc_driver.h
+main.obj: ../watch_face_themes.h
+main.obj: ../Lcd.h
 main.obj: ../Lcd.h
 
 ../main.c: 
@@ -40,4 +42,6 @@ C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stda
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdbool.h: 
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/assert.h: 
 ../adc_driver.h: 
+../watch_face_themes.h: 
+../Lcd.h: 
 ../Lcd.h: 

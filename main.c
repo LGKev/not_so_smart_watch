@@ -7,6 +7,7 @@
 #include "ConfigureRTC.h"
 #include "grlib.h"
 #include "adc_driver.h"
+#include "watch_face_themes.h"
 
 
 
@@ -40,6 +41,29 @@ volatile  uint32_t bla = 0;
 /*                                  */
 /*============================================*/
 
+/*============================================*/
+/*============================================*/
+/*=========       LCD Strings    Globals           ==========*/
+/*============================================*/
+
+
+volatile char seconds_string[20];
+volatile char minutes_string[20];
+volatile char hours_string[20];
+volatile char years_string[20];
+volatile char days_of_week_string[20];
+volatile char days_string_number[20];
+volatile char months_string[20];
+
+//adc strings
+volatile char X_adc_string[20];
+volatile char Y_adc_string[20];
+volatile char Z_adc_string[20];
+
+
+char test_string[20];
+/*============================================*/
+/*============================================*/
 
 
 //:Accelerometer globals, used in the adc_driver.c file
@@ -51,29 +75,6 @@ volatile uint16_t Z_ADC = 0;
 
 void main(void) {
 
-    /*============================================*/
-    /*============================================*/
-    /*=========       LCD Strings               ==========*/
-    /*============================================*/
-
-
-    char seconds_string[20];
-    char minutes_string[20];
-    char hours_string[20];
-    char years_string[20];
-    char days_of_week_string[20];
-    char days_string_number[20];
-    char months_string[20];
-
-    //adc strings
-    char X_adc_string[20];
-    char Y_adc_string[20];
-    char Z_adc_string[20];
-
-
-    char test_string[20];
-    /*============================================*/
-    /*============================================*/
 
 
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD; // stop watchdog timer
@@ -133,60 +134,9 @@ ADC_CONFIG_Accelerometer();
 
 
         bla++;
+        basic_watch();
 
-        if(bla%3000 == 0){
-
-      sprintf(hours_string, "%02X:", hour );
-      display_center(hours_string, 25, 60);
-
-      sprintf(minutes_string, "%02X:", minute );
-      display_center(minutes_string, 48, 60);
-
-      sprintf(seconds_string, "%02X", second );
-      display_center(seconds_string, 69, 60);
-
-
-        }
-
-        //date , month, day, year, day of week.
-        //near the top of display.
-        if(bla%10000==0){
-          //  set_font(g_sFontCm18i);
-                 sprintf(months_string, "%02X", month );
-                 display_center(months_string, 20, 30);
-
-                 sprintf(days_string_number, "/%02X/", day);
-                 display_center(days_string_number, 50, 30);
-
-                 sprintf(years_string, "%02X", year );
-                 display_center(years_string, 90, 30);
-
-                 if(AM == 0){
-                     display_center("AM", 100, 60);
-                 }
-                 else{
-                     display_center("PM", 100, 60);
-                 }
-
-
-                 switch(day_of_week){
-                 case 0: display_center("Sunday", 64, 100);
-                         break;
-                 case 1: display_center("Monday", 64, 100);
-                          break;
-                 default: display_center("Saturday", 64, 100);
-                 }//end of day of week case
-
-
-                 /*
-                  *  To be honest I could probably make a function to
-                  *  measure the length of the string
-                  *  then do a for loop to loop over to adjust the sizing.
-                  *  i'll save that for Saturday. wooo yay today's only sautrday thank goodnsess.
-                  *
-                  * */
-        }
-    }
+}
 }
 
 

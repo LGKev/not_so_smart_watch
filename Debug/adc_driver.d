@@ -10,6 +10,7 @@ adc_driver.obj: C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/msp432p401r_
 adc_driver.obj: C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/CMSIS/core_cm4.h
 adc_driver.obj: C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/CMSIS/cmsis_compiler.h
 adc_driver.obj: C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/system_msp432p401r.h
+adc_driver.obj: ../adc_driver.h
 
 ../adc_driver.c: 
 C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/msp.h: 
@@ -21,3 +22,4 @@ C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/msp432p401r_classic.h:
 C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/CMSIS/core_cm4.h: 
 C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/CMSIS/cmsis_compiler.h: 
 C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/system_msp432p401r.h: 
+../adc_driver.h: 
