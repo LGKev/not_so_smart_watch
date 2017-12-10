@@ -13,6 +13,7 @@ C_SRCS += \
 ../Crystalfontz128x128_ST7735.c \
 ../HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.c \
 ../Lcd.c \
+../adc_driver.c \
 ../aes256.c \
 ../button.c \
 ../checkbox.c \
@@ -40,7 +41,6 @@ C_SRCS += \
 ../pcm.c \
 ../pmap.c \
 ../pss.c \
-../radioButton.c \
 ../rectangle.c \
 ../ref_a.c \
 ../reset.c \
@@ -50,6 +50,7 @@ C_SRCS += \
 ../string.c \
 ../sysctl.c \
 ../system_msp432p401r.c \
+../watch_face_themes.c \
 ../wdt_a.c 
 
 C_DEPS += \
@@ -57,6 +58,7 @@ C_DEPS += \
 ./Crystalfontz128x128_ST7735.d \
 ./HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.d \
 ./Lcd.d \
+./adc_driver.d \
 ./aes256.d \
 ./button.d \
 ./checkbox.d \
@@ -84,7 +86,6 @@ C_DEPS += \
 ./pcm.d \
 ./pmap.d \
 ./pss.d \
-./radioButton.d \
 ./rectangle.d \
 ./ref_a.d \
 ./reset.d \
@@ -94,6 +95,7 @@ C_DEPS += \
 ./string.d \
 ./sysctl.d \
 ./system_msp432p401r.d \
+./watch_face_themes.d \
 ./wdt_a.d 
 
 OBJS += \
@@ -101,6 +103,7 @@ OBJS += \
 ./Crystalfontz128x128_ST7735.obj \
 ./HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj \
 ./Lcd.obj \
+./adc_driver.obj \
 ./aes256.obj \
 ./button.obj \
 ./checkbox.obj \
@@ -128,7 +131,6 @@ OBJS += \
 ./pcm.obj \
 ./pmap.obj \
 ./pss.obj \
-./radioButton.obj \
 ./rectangle.obj \
 ./ref_a.obj \
 ./reset.obj \
@@ -138,6 +140,7 @@ OBJS += \
 ./string.obj \
 ./sysctl.obj \
 ./system_msp432p401r.obj \
+./watch_face_themes.obj \
 ./wdt_a.obj 
 
 OBJS__QUOTED += \
@@ -145,6 +148,7 @@ OBJS__QUOTED += \
 "Crystalfontz128x128_ST7735.obj" \
 "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" \
 "Lcd.obj" \
+"adc_driver.obj" \
 "aes256.obj" \
 "button.obj" \
 "checkbox.obj" \
@@ -172,7 +176,6 @@ OBJS__QUOTED += \
 "pcm.obj" \
 "pmap.obj" \
 "pss.obj" \
-"radioButton.obj" \
 "rectangle.obj" \
 "ref_a.obj" \
 "reset.obj" \
@@ -182,6 +185,7 @@ OBJS__QUOTED += \
 "string.obj" \
 "sysctl.obj" \
 "system_msp432p401r.obj" \
+"watch_face_themes.obj" \
 "wdt_a.obj" 
 
 C_DEPS__QUOTED += \
@@ -189,6 +193,7 @@ C_DEPS__QUOTED += \
 "Crystalfontz128x128_ST7735.d" \
 "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.d" \
 "Lcd.d" \
+"adc_driver.d" \
 "aes256.d" \
 "button.d" \
 "checkbox.d" \
@@ -216,7 +221,6 @@ C_DEPS__QUOTED += \
 "pcm.d" \
 "pmap.d" \
 "pss.d" \
-"radioButton.d" \
 "rectangle.d" \
 "ref_a.d" \
 "reset.d" \
@@ -226,12 +230,14 @@ C_DEPS__QUOTED += \
 "string.d" \
 "sysctl.d" \
 "system_msp432p401r.d" \
+"watch_face_themes.d" \
 "wdt_a.d" 
 
 C_SRCS__QUOTED += \
 "../ConfigureRTC.c" \
 "../HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.c" \
 "../Lcd.c" \
+"../adc_driver.c" \
 "../aes256.c" \
 "../button.c" \
 "../checkbox.c" \
@@ -259,7 +265,6 @@ C_SRCS__QUOTED += \
 "../pcm.c" \
 "../pmap.c" \
 "../pss.c" \
-"../radioButton.c" \
 "../rectangle.c" \
 "../ref_a.c" \
 "../reset.c" \
@@ -269,6 +274,7 @@ C_SRCS__QUOTED += \
 "../string.c" \
 "../sysctl.c" \
 "../system_msp432p401r.c" \
+"../watch_face_themes.c" \
 "../wdt_a.c" 
 
 

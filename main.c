@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include "ConfigureRTC.h"
 #include "grlib.h"
+#include "adc_driver.h"
+
 
 
 /* User Defined Headers */
@@ -14,14 +16,7 @@
 
 #define SCB_SCR_ENABLE_SLEEPONEXIT (0x00000002)
 
-char seconds_string[20];
-char minutes_string[20];
-char hours_string[20];
-char years_string[20];
-char days_of_week_string[20];
-char days_string_number[20];
-char months_string[20];
-char test_string[20];
+
 
 /*============================================*/
 /*============================================*/
@@ -44,7 +39,43 @@ volatile uint8_t      update_time = 1; // 1 is true, 0 is false;
 volatile  uint32_t bla = 0;
 /*                                  */
 /*============================================*/
+
+
+
+//:Accelerometer globals, used in the adc_driver.c file
+volatile uint16_t X_ADC = 0;
+volatile uint16_t Y_ADC = 0;
+volatile uint16_t Z_ADC = 0;
+/*============================================*/
+
+
 void main(void) {
+
+    /*============================================*/
+    /*============================================*/
+    /*=========       LCD Strings               ==========*/
+    /*============================================*/
+
+
+    char seconds_string[20];
+    char minutes_string[20];
+    char hours_string[20];
+    char years_string[20];
+    char days_of_week_string[20];
+    char days_string_number[20];
+    char months_string[20];
+
+    //adc strings
+    char X_adc_string[20];
+    char Y_adc_string[20];
+    char Z_adc_string[20];
+
+
+    char test_string[20];
+    /*============================================*/
+    /*============================================*/
+
+
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD; // stop watchdog timer
     uint32_t kk = 0;
     //visual output for minutes
@@ -72,8 +103,18 @@ void main(void) {
       //This enables all SRAM banks during low power mode
       SYSCTL->SRAM_BANKEN |= SYSCTL_SRAM_BANKRET_BNK7_RET; //enables all banks
  /*============================================*/
-/* ==========         end of configurations             =========*/
+/* ==========         end of RTC  configurations             =========*/
 /*=============================================*/
+
+
+      /*============================================*/
+      /*======         ADC acclerometer *Kuwata ==========*/
+      /*============================================*/
+
+ADC_CONFIG_Accelerometer();
+
+      /*=============================================*/
+
 
       __enable_interrupt();
      // set_font(g_sFontCm18i);
@@ -85,6 +126,12 @@ void main(void) {
 
 
     while(1) {
+
+        //start an ADC conversion
+        ADC14->CTL0 |= ADC14_CTL0_SC | ADC14_CTL0_ENC; //start sample, enable conversion?
+
+
+
         bla++;
 
         if(bla%3000 == 0){
