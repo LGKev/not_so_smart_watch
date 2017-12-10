@@ -17,6 +17,9 @@ watch_face_themes.obj: ../grlib.h
 watch_face_themes.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdbool.h
 watch_face_themes.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/assert.h
 watch_face_themes.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/linkage.h
+watch_face_themes.obj: ../watch_defines.h
+watch_face_themes.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdio.h
+watch_face_themes.obj: C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdarg.h
 
 ../watch_face_themes.c: 
 C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/msp.h: 
@@ -35,3 +38,6 @@ C:/Users/kwat1/Documents/ccsv7/ccs_base/arm/include/system_msp432p401r.h:
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdbool.h: 
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/assert.h: 
 C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/linkage.h: 
+../watch_defines.h: 
+C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdio.h: 
+C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/stdarg.h: 

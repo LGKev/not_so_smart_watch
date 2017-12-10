@@ -48,6 +48,7 @@ main.obj: ../wdt_a.h
 main.obj: ../spi.h
 main.obj: ../Crystalfontz128x128_ST7735.h
 main.obj: ../grlib.h
+main.obj: ../watch_defines.h
 main.obj: ../Lcd.h
 
 ../main.c: 
@@ -98,4 +99,5 @@ C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/asse
 ../spi.h: 
 ../Crystalfontz128x128_ST7735.h: 
 ../grlib.h: 
+../watch_defines.h: 
 ../Lcd.h: 

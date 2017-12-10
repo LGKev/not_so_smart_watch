@@ -10,7 +10,7 @@
 #include "watch_face_themes.h"
 #include "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.h"
 #include  "Crystalfontz128x128_ST7735.h"
-
+#include "watch_defines.h"
 
 
 /* User Defined Headers */
@@ -65,14 +65,14 @@ volatile char Z_adc_string[20];
 
 char test_string[20];
 
-volatile uint8_t change_watch_face = 0; // 1 is true, 0 is false;
+volatile uint8_t change_watch_face = 1; // 1 is true, 0 is false;
 volatile uint8_t    which_face = 0; //0 being defualt, and 1,2,...n, is the number of faces. defined in watch_face_themes
 
 
 /*============================================*/
 /*============================================*/
-
-
+/*=========       ACCL     Globals                         ==========*/
+/*============================================*/
 //:Accelerometer globals, used in the adc_driver.c file
 volatile uint16_t X_ADC = 0;
 volatile uint16_t Y_ADC = 0;
@@ -80,8 +80,25 @@ volatile uint16_t Z_ADC = 0;
 /*============================================*/
 
 
-void main(void) {
+#ifdef temperature_OK
+/*============================================*/
+/*============================================*/
+/*====     Temperature Sensor     Globals                         ==========*/
+/*============================================*/
+//:Accelerometer globals, used in the adc_driver.c file
+volatile float Temperature_C;
+volatile float Temperature_F ;
+volatile float Temperature_K;
 
+volatile char temperature_C_string[20];
+volatile char temperature_F_string[20];
+volatile char temperature_K_string[20];
+
+
+/*============================================*/
+#endif
+
+void main(void) {
 
 
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD; // stop watchdog timer
@@ -125,15 +142,17 @@ ADC_CONFIG_Accelerometer();
 LCD();
 
       __enable_interrupt();
-     // set_font(g_sFontCm18i);
-      //this settting font doesn't work. i need to find out the correct way.
-      //I need a helper funciton to acces the protectedd.
 
 //turn display off
 //      HAL_LCD_writeCommand(CM_DISPOFF);
 //turn backlight off
 
+      Temperature_C = 53.53;
+      Temperature_F =44.44;
+       Temperature_K = 56.78;
+
     while(1) {
+
 
         //start an ADC conversion
         ADC14->CTL0 |= ADC14_CTL0_SC | ADC14_CTL0_ENC; //start sample, enable conversion?
@@ -141,7 +160,10 @@ LCD();
 
 
         bla++;
-        basic_watch();
+        //basic_watch();
+      //  large_TIME();
+       basic_Temperature();
+
 
 }
 }

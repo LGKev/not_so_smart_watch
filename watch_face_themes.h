@@ -21,4 +21,6 @@ void basic_watch(void);
  * */
 void large_TIME(void);
 
+void basic_Temperature();
+
 #endif /* WATCH_FACE_THEMES_H_ */
