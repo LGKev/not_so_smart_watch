@@ -17,5 +17,8 @@
  * goals: be able to change background color.
  * */
 void basic_watch(void);
+/* only shows the time in a large font similar to this
+ * */
+void large_TIME(void);
 
 #endif /* WATCH_FACE_THEMES_H_ */

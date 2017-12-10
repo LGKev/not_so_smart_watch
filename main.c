@@ -45,7 +45,7 @@ volatile  uint32_t bla = 0;
 
 /*============================================*/
 /*============================================*/
-/*=========       LCD Strings    Globals           ==========*/
+/*=========       LCD     Globals                         ==========*/
 /*============================================*/
 
 
@@ -64,6 +64,11 @@ volatile char Z_adc_string[20];
 
 
 char test_string[20];
+
+volatile uint8_t change_watch_face = 0; // 1 is true, 0 is false;
+volatile uint8_t    which_face = 0; //0 being defualt, and 1,2,...n, is the number of faces. defined in watch_face_themes
+
+
 /*============================================*/
 /*============================================*/
 
@@ -89,7 +94,6 @@ void main(void) {
     for(kk=0; kk<2000; kk++);
     P1OUT^=BIT0;
 
-    LCD();
 
     __enable_irq();
 
@@ -118,6 +122,7 @@ ADC_CONFIG_Accelerometer();
 
       /*=============================================*/
 
+LCD();
 
       __enable_interrupt();
      // set_font(g_sFontCm18i);
@@ -125,9 +130,8 @@ ADC_CONFIG_Accelerometer();
       //I need a helper funciton to acces the protectedd.
 
 //turn display off
-      HAL_LCD_writeCommand(CM_DISPOFF);
+//      HAL_LCD_writeCommand(CM_DISPOFF);
 //turn backlight off
-      P2OUT = 0;
 
     while(1) {
 

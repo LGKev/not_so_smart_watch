@@ -22,10 +22,10 @@ void LCD(void)
 
    /* Initializes graphics context */
    Graphics_initContext(&g_sContext, &g_sCrystalfontz128x128);
-   Graphics_setForegroundColor(&g_sContext, GRAPHICS_COLOR_AQUAMARINE);
-   Graphics_setBackgroundColor(&g_sContext, GRAPHICS_COLOR_RED);
+   //Graphics_setForegroundColor(&g_sContext, GRAPHICS_COLOR_AQUAMARINE);
+   //Graphics_setBackgroundColor(&g_sContext, GRAPHICS_COLOR_RED);
    //GrContextFontSet(&g_sContext, &g_sFontFixed6x8);
-   GrContextFontSet(&g_sContext, &g_sFontCm18i);
+  GrContextFontSet(&g_sContext, &g_sFontCm18i);
    Graphics_clearDisplay(&g_sContext);
 }
 

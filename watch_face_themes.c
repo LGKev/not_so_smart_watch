@@ -40,9 +40,22 @@ extern uint8_t update_time;
 
 extern uint8_t AM;    //AM is 0, and PM is 1
 
+extern  Graphics_Context g_sContext;
+
+extern uint8_t change_watch_face ; // 1 is true, 0 is false;
+extern uint8_t    which_face ; //0 being defualt, and 1,2,...n, is the number of faces. defined in watch_face_themes
 
 
 void basic_watch(){
+    if(change_watch_face == 1){
+    Graphics_setForegroundColor(&g_sContext, GRAPHICS_COLOR_AQUAMARINE);
+    Graphics_setBackgroundColor(&g_sContext, GRAPHICS_COLOR_LIME_GREEN);
+    Graphics_clearDisplay(&g_sContext);
+
+
+    change_watch_face = 0;
+    }
+
 //empty for now, but will move from main.
     sprintf(hours_string, "%02X:", hour );
          display_center(hours_string, 25, 60);
@@ -89,5 +102,8 @@ void basic_watch(){
             *  i'll save that for Saturday. wooo yay today's only sautrday thank goodnsess.
             *
             * */
+}
 
+void large_TIME(){
+    LCD();
 }
