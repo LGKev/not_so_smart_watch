@@ -49,6 +49,8 @@ main.obj: ../spi.h
 main.obj: ../Crystalfontz128x128_ST7735.h
 main.obj: ../grlib.h
 main.obj: ../watch_defines.h
+main.obj: ../kk_gpio.h
+main.obj: ../tmp006.h
 main.obj: ../Lcd.h
 
 ../main.c: 
@@ -100,4 +102,6 @@ C:/Users/kwat1/Documents/ccsv7/tools/compiler/ti-cgt-arm_16.9.4.LTS/include/asse
 ../Crystalfontz128x128_ST7735.h: 
 ../grlib.h: 
 ../watch_defines.h: 
+../kk_gpio.h: 
+../tmp006.h: 
 ../Lcd.h: 

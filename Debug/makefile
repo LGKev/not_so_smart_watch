@@ -17,7 +17,6 @@ ORDERED_OBJS += \
 "./adc_driver.obj" \
 "./aes256.obj" \
 "./button.obj" \
-"./checkbox.obj" \
 "./circle.obj" \
 "./comp_e.obj" \
 "./context.obj" \
@@ -38,6 +37,7 @@ ORDERED_OBJS += \
 "./image.obj" \
 "./imageButton.obj" \
 "./interrupt.obj" \
+"./kk_gpio.obj" \
 "./lcdconfig.obj" \
 "./line.obj" \
 "./main.obj" \
@@ -54,6 +54,7 @@ ORDERED_OBJS += \
 "./string.obj" \
 "./sysctl.obj" \
 "./system_msp432p401r.obj" \
+"./tmp006.obj" \
 "./watch_face_themes.obj" \
 "./wdt_a.obj" \
 "../msp432p401r.cmd" \
@@ -198,8 +199,8 @@ basic_display_v2.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "ConfigureRTC.obj" "Crystalfontz128x128_ST7735.obj" "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" "Lcd.obj" "adc_driver.obj" "aes256.obj" "button.obj" "checkbox.obj" "circle.obj" "comp_e.obj" "context.obj" "cpu.obj" "crc32.obj" "cs.obj" "display.obj" "dma.obj" "flash.obj" "fontcm18.obj" "fontcm18i.obj" "fontcm24b.obj" "fontcm42.obj" "fontcm48.obj" "fontfixed6x8.obj" "fpu.obj" "gpio.obj" "image.obj" "imageButton.obj" "interrupt.obj" "lcdconfig.obj" "line.obj" "main.obj" "mpu.obj" "pcm.obj" "pmap.obj" "pss.obj" "rectangle.obj" "ref_a.obj" "reset.obj" "rtc_c.obj" "spi.obj" "startup_msp432p401r_ccs.obj" "string.obj" "sysctl.obj" "system_msp432p401r.obj" "watch_face_themes.obj" "wdt_a.obj" 
-	-$(RM) "ConfigureRTC.d" "Crystalfontz128x128_ST7735.d" "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.d" "Lcd.d" "adc_driver.d" "aes256.d" "button.d" "checkbox.d" "circle.d" "comp_e.d" "context.d" "cpu.d" "crc32.d" "cs.d" "display.d" "dma.d" "flash.d" "fontcm18.d" "fontcm18i.d" "fontcm24b.d" "fontcm42.d" "fontcm48.d" "fontfixed6x8.d" "fpu.d" "gpio.d" "image.d" "imageButton.d" "interrupt.d" "lcdconfig.d" "line.d" "main.d" "mpu.d" "pcm.d" "pmap.d" "pss.d" "rectangle.d" "ref_a.d" "reset.d" "rtc_c.d" "spi.d" "startup_msp432p401r_ccs.d" "string.d" "sysctl.d" "system_msp432p401r.d" "watch_face_themes.d" "wdt_a.d" 
+	-$(RM) "ConfigureRTC.obj" "Crystalfontz128x128_ST7735.obj" "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.obj" "Lcd.obj" "adc_driver.obj" "aes256.obj" "button.obj" "circle.obj" "comp_e.obj" "context.obj" "cpu.obj" "crc32.obj" "cs.obj" "display.obj" "dma.obj" "flash.obj" "fontcm18.obj" "fontcm18i.obj" "fontcm24b.obj" "fontcm42.obj" "fontcm48.obj" "fontfixed6x8.obj" "fpu.obj" "gpio.obj" "image.obj" "imageButton.obj" "interrupt.obj" "kk_gpio.obj" "lcdconfig.obj" "line.obj" "main.obj" "mpu.obj" "pcm.obj" "pmap.obj" "pss.obj" "rectangle.obj" "ref_a.obj" "reset.obj" "rtc_c.obj" "spi.obj" "startup_msp432p401r_ccs.obj" "string.obj" "sysctl.obj" "system_msp432p401r.obj" "tmp006.obj" "watch_face_themes.obj" "wdt_a.obj" 
+	-$(RM) "ConfigureRTC.d" "Crystalfontz128x128_ST7735.d" "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.d" "Lcd.d" "adc_driver.d" "aes256.d" "button.d" "circle.d" "comp_e.d" "context.d" "cpu.d" "crc32.d" "cs.d" "display.d" "dma.d" "flash.d" "fontcm18.d" "fontcm18i.d" "fontcm24b.d" "fontcm42.d" "fontcm48.d" "fontfixed6x8.d" "fpu.d" "gpio.d" "image.d" "imageButton.d" "interrupt.d" "kk_gpio.d" "lcdconfig.d" "line.d" "main.d" "mpu.d" "pcm.d" "pmap.d" "pss.d" "rectangle.d" "ref_a.d" "reset.d" "rtc_c.d" "spi.d" "startup_msp432p401r_ccs.d" "string.d" "sysctl.d" "system_msp432p401r.d" "tmp006.d" "watch_face_themes.d" "wdt_a.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

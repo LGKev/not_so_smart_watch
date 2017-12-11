@@ -2,7 +2,7 @@
  * watch_defines.h
  *
  *  Created on: Dec 10, 2017
- *      Author: kwat1
+ *      Author: Kevin Kuwata
  */
 
 #ifndef WATCH_DEFINES_H_

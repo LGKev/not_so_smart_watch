@@ -16,7 +16,6 @@ C_SRCS += \
 ../adc_driver.c \
 ../aes256.c \
 ../button.c \
-../checkbox.c \
 ../circle.c \
 ../comp_e.c \
 ../context.c \
@@ -37,6 +36,7 @@ C_SRCS += \
 ../image.c \
 ../imageButton.c \
 ../interrupt.c \
+../kk_gpio.c \
 ../lcdconfig.c \
 ../line.c \
 ../main.c \
@@ -53,6 +53,7 @@ C_SRCS += \
 ../string.c \
 ../sysctl.c \
 ../system_msp432p401r.c \
+../tmp006.c \
 ../watch_face_themes.c \
 ../wdt_a.c 
 
@@ -64,7 +65,6 @@ C_DEPS += \
 ./adc_driver.d \
 ./aes256.d \
 ./button.d \
-./checkbox.d \
 ./circle.d \
 ./comp_e.d \
 ./context.d \
@@ -85,6 +85,7 @@ C_DEPS += \
 ./image.d \
 ./imageButton.d \
 ./interrupt.d \
+./kk_gpio.d \
 ./lcdconfig.d \
 ./line.d \
 ./main.d \
@@ -101,6 +102,7 @@ C_DEPS += \
 ./string.d \
 ./sysctl.d \
 ./system_msp432p401r.d \
+./tmp006.d \
 ./watch_face_themes.d \
 ./wdt_a.d 
 
@@ -112,7 +114,6 @@ OBJS += \
 ./adc_driver.obj \
 ./aes256.obj \
 ./button.obj \
-./checkbox.obj \
 ./circle.obj \
 ./comp_e.obj \
 ./context.obj \
@@ -133,6 +134,7 @@ OBJS += \
 ./image.obj \
 ./imageButton.obj \
 ./interrupt.obj \
+./kk_gpio.obj \
 ./lcdconfig.obj \
 ./line.obj \
 ./main.obj \
@@ -149,6 +151,7 @@ OBJS += \
 ./string.obj \
 ./sysctl.obj \
 ./system_msp432p401r.obj \
+./tmp006.obj \
 ./watch_face_themes.obj \
 ./wdt_a.obj 
 
@@ -160,7 +163,6 @@ OBJS__QUOTED += \
 "adc_driver.obj" \
 "aes256.obj" \
 "button.obj" \
-"checkbox.obj" \
 "circle.obj" \
 "comp_e.obj" \
 "context.obj" \
@@ -181,6 +183,7 @@ OBJS__QUOTED += \
 "image.obj" \
 "imageButton.obj" \
 "interrupt.obj" \
+"kk_gpio.obj" \
 "lcdconfig.obj" \
 "line.obj" \
 "main.obj" \
@@ -197,6 +200,7 @@ OBJS__QUOTED += \
 "string.obj" \
 "sysctl.obj" \
 "system_msp432p401r.obj" \
+"tmp006.obj" \
 "watch_face_themes.obj" \
 "wdt_a.obj" 
 
@@ -208,7 +212,6 @@ C_DEPS__QUOTED += \
 "adc_driver.d" \
 "aes256.d" \
 "button.d" \
-"checkbox.d" \
 "circle.d" \
 "comp_e.d" \
 "context.d" \
@@ -229,6 +232,7 @@ C_DEPS__QUOTED += \
 "image.d" \
 "imageButton.d" \
 "interrupt.d" \
+"kk_gpio.d" \
 "lcdconfig.d" \
 "line.d" \
 "main.d" \
@@ -245,6 +249,7 @@ C_DEPS__QUOTED += \
 "string.d" \
 "sysctl.d" \
 "system_msp432p401r.d" \
+"tmp006.d" \
 "watch_face_themes.d" \
 "wdt_a.d" 
 
@@ -255,7 +260,6 @@ C_SRCS__QUOTED += \
 "../adc_driver.c" \
 "../aes256.c" \
 "../button.c" \
-"../checkbox.c" \
 "../circle.c" \
 "../comp_e.c" \
 "../context.c" \
@@ -276,6 +280,7 @@ C_SRCS__QUOTED += \
 "../image.c" \
 "../imageButton.c" \
 "../interrupt.c" \
+"../kk_gpio.c" \
 "../lcdconfig.c" \
 "../line.c" \
 "../main.c" \
@@ -292,6 +297,7 @@ C_SRCS__QUOTED += \
 "../string.c" \
 "../sysctl.c" \
 "../system_msp432p401r.c" \
+"../tmp006.c" \
 "../watch_face_themes.c" \
 "../wdt_a.c" 
 

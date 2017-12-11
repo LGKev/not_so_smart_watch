@@ -2,7 +2,7 @@
  * watch_face_themes.h
  *
  *  Created on: Dec 9, 2017
- *      Author: kwat1
+ *      Author: Kevin Kuwata
  */
 
 

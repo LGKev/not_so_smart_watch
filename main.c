@@ -1,6 +1,8 @@
-/*
- * main.c
- * */
+ /* main.c
+ *
+ *  Created on: Dec 10, 2017
+ *      Author: Kevin Kuwata
+ */
 #include "msp.h"
 #include "stdlib.h"
 #include <stdio.h>
@@ -11,6 +13,8 @@
 #include "HAL_MSP_EXP432P401R_Crystalfontz128x128_ST7735.h"
 #include  "Crystalfontz128x128_ST7735.h"
 #include "watch_defines.h"
+#include "kk_gpio.h"
+#include "tmp006.h"
 
 
 /* User Defined Headers */
@@ -95,6 +99,10 @@ volatile char temperature_F_string[20];
 volatile char temperature_K_string[20];
 
 
+volatile int Vobj = 0;
+volatile int Tdie = 0;
+ long double S0 = 0;
+volatile float temp;
 /*============================================*/
 #endif
 
@@ -104,20 +112,18 @@ void main(void) {
     WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD; // stop watchdog timer
     uint32_t kk = 0;
     //visual output for minutes
-    P1DIR = BIT0;
-    P1SEL0 = 0;
-    P1SEL1 = 0;
-    P1OUT |= BIT0;
-    for(kk=0; kk<2000; kk++);
-    P1OUT^=BIT0;
+
+  config_redLED();
 
 
-    __enable_irq();
+   Left_Right_Button_Config();
+
+
 
    // display_center(" version 1.1",64,20);
    // display_horizontal_Line(40, 60, 89, 33);
     /*============================================*/
-    /*======         RTC         *jordan Wright  ==========*/
+    /*======         RTC         *Jordan Wright  ==========*/
     /*============================================*/
     // Select lower power clock for low power mode
       CS->CTL1 &= ~(CS_CTL1_SELA_MASK) | CS_CTL1_SELA_0;
@@ -137,35 +143,52 @@ void main(void) {
 
 ADC_CONFIG_Accelerometer();
 
-      /*=============================================*/
+ /*=============================================*/
+/*============================================*/
+/*======         TMP006 ==========*/
+     GPIO_configure_TMP006();
+     I2C_configure_tmp006();
+     TMP006_init();
+
+
+/*============================================*/
 
 LCD();
 
-      __enable_interrupt();
 
 //turn display off
 //      HAL_LCD_writeCommand(CM_DISPOFF);
 //turn backlight off
 
-      Temperature_C = 53.53;
-      Temperature_F =44.44;
-       Temperature_K = 56.78;
-
+__enable_irq();
+__enable_interrupts();
     while(1) {
 
 
         //start an ADC conversion
-        ADC14->CTL0 |= ADC14_CTL0_SC | ADC14_CTL0_ENC; //start sample, enable conversion?
+        ADC14->CTL0 |= ADC14_CTL0_SC | ADC14_CTL0_ENC; //start sample, enable conversion
 
+       temp  = TMP006_getTemp();
+       temp_array_fxn(temp);
 
 
         bla++;
+ //       basic_watch();
+
+
         //basic_watch();
       //  large_TIME();
-       basic_Temperature();
-
-
-}
+//       basic_Temperature();
+       if(which_face == 0){
+           basic_watch();
+       }
+       else if(which_face == 1){
+           large_TIME();
+       }
+       else if(which_face == 2){
+           basic_Temperature();
+       }
+    }//end of while main
 }
 
 
